@@ -1,12 +1,10 @@
 const { Telegraf, Markup } = require("telegraf");
 const admin = require("firebase-admin");
 
-// Инициализация Firebase
-const serviceAccount = require("./canadatobacco-e5f2a-firebase-adminsdk-dxq87-38909c5978.json");
+const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://canadatobacco-e5f2a.firebaseio.com",
+  credential: admin.credential.cert(firebaseConfig),
 });
 
 const db = admin.firestore();
