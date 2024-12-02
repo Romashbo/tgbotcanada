@@ -1,5 +1,6 @@
 const { Telegraf, Markup } = require("telegraf");
 const admin = require("firebase-admin");
+require('dotenv').config();
 
 const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
 
